@@ -11,3 +11,11 @@
   background-position: center;
   background-size: cover;
 }
+
+#rockets {
+  background-image: url(/src/assets/backgound2.jpg);
+  max-width: 100%;
+  height: fit-content;
+  background-position: center;
+  background-size: cover;
+}
