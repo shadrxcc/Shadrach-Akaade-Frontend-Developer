@@ -17,13 +17,28 @@ const Rockets = (props) => {
 
   console.log();
 
- 
+  const filteredRockets = rockets.filter((rocket) => {
+    if (props.location && rocket.country !== props.location) {
+      return false;
+    }
+
+    const rocketYear = new Date(rocket.first_flight).getFullYear();
+    if (props.year && rocketYear !== parseInt(props.year)) {
+      return false;
+    }
+
+    if (props.engine && rocket.engines.type !== props.engine) {
+      return false;
+    }
+
+    return true;
+  });
 
   return (
     <div>
-      {rockets.length === 0 ? (
+      {filteredRockets.length === 0 ? (
         <p className="text-white font-bold text-3xl md:text-6xl text-center">
-          No rockets :(
+          No rockets match your search :(
         </p>
       ) : (
         <div className="grid md:grid-cols-2 gap-x-8 md:px-6 gap-y-8 w-full">
