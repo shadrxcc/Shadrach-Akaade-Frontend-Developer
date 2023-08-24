@@ -1,6 +1,4 @@
 import React from "react";
-import { BsChevronDown } from "react-icons/bs";
-import Header from "./header";
 
 const Hero = () => {
   return (
