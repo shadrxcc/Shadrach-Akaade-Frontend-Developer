@@ -1,11 +1,14 @@
 import "./App.css";
+import Banner from "./component/banner/banner";
+import RocketsSection from "./component/rockets/rocketssection";
 import "./styles/main.css";
-import Banner from "./components/banner/banner";
+
 
 function App() {
   return (
     <>
-      <Banner />
+     <Banner/>
+     <RocketsSection/>
     </>
   );
 }
