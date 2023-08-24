@@ -37,9 +37,13 @@ const Rockets = (props) => {
   return (
     <div>
       {filteredRockets.length === 0 ? (
-        <p className="text-white font-bold text-3xl md:text-6xl text-center">
+        <div className="flex flex-col gap-y-3 items-center">
+          <p className="text-white font-bold text-3xl md:text-6xl text-center">
           No rockets match your search :(
         </p>
+        <button onClick={() => window.location.reload()} className="text-white rounded-lg m-auto text-xl border-white border bg-slate-600 px-10 py-6">Please refresh</button>
+        </div>
+        
       ) : (
         <div className="grid md:grid-cols-2 gap-x-8 md:px-6 gap-y-8 w-full">
           {filteredRockets.map((rocket) => (
