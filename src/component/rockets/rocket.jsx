@@ -9,9 +9,14 @@ const Rocket = ({
   boosters,
   stages,
   activestatus,
+  setOpen,
 }) => {
   return (
-    <Card key={id} className="flex flex-col m-auto w-fit gap-y-3 p-4 bg-white ">
+    <Card
+      onClick={setOpen}
+      key={id}
+      className="flex flex-col cursor-pointer m-auto w-fit gap-y-3 p-4 bg-white "
+    >
       <img
         src={img}
         className=" max-[280px]:w-[15em] w-80 md:w-[30rem] h-60 m-auto object-cover"

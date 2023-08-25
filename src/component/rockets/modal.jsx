@@ -15,7 +15,7 @@ const OVERLAY_STYLES = {
   zIndex: 1000,
 };
 
-const Modal = ({ open, children, onClose }) => {
+const Modal = ({ open, children }) => {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -34,7 +34,7 @@ const Modal = ({ open, children, onClose }) => {
       <div style={OVERLAY_STYLES} />
 
       <div
-        className="fixed md:p-[50px] mb-40 overflow-y-auto z-[1000] left-[50%] w-[90%] md:w-[80%] top-[45%] md:left-[50%] h-screen"
+        className="fixed max-w-7xl mx-auto md:p-[50px] mb-40 overflow-y-auto z-[1000] max-[280]:w-[53%] left-[50%] w-[90%] md:w-[80%] top-[55%] md:top-[55%] md:left-[50%] h-screen"
         style={MODAL_STYLES}
       >
         {children}

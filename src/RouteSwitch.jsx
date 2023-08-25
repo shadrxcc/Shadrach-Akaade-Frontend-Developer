@@ -8,7 +8,8 @@ const RouteSwitch = () => {
     <>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/details/:rocketId" element={<RocketDetails />} />
+        {/* <Route path="/details" element={<RocketDetails />} /> */}
+        <Route path="/:rocket_id" element={<App />} />
       </Routes>
     </>
   );
