@@ -8,5 +8,9 @@ export default {
 	theme: {
 		extend: {},
 	},
+	parserOptions: {
+		ecmaVersion: 2020, // Use a numerical value
+		// other options
+	},
 	plugins: [],
 }
