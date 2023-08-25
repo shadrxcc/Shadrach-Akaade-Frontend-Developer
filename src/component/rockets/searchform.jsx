@@ -7,6 +7,7 @@ const SearchForm = (props) => {
 
   const searchRockets = (e) => {
     e.preventDefault();
+    props.onSearch();
   };
 
   return (
@@ -84,7 +85,7 @@ const SearchForm = (props) => {
           </div>
         </div>
 
-        <button className="w-full bg-slate-600 px-8 text-white rounded-md py-2">
+        <button className="w-fit bg-slate-600 px-8 text-white rounded-md py-2">
           Search
         </button>
       </form>

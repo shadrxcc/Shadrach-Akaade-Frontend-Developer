@@ -3,41 +3,46 @@ import Rocket from "./rocket";
 import { Link } from "react-router-dom";
 
 const Rockets = (props) => {
-  const [rockets, setRockets] = useState([]);
+//   const [rockets, setRockets] = useState([]);
+//   const [filteredrockets, setFilteredRockets] = useState([]);
 
-  useEffect(() => {
-    fetch("https://api.spacexdata.com/v3/rockets")
-      .then((response) => response.json())
-      .then((data) => {
-        setRockets(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+//   useEffect(() => {
+//     fetch("https://api.spacexdata.com/v3/rockets")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setRockets(data);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching data:", error);
+//       });
+//   }, []);
 
-  console.log();
+//  useEffect(() => {
+//   const filtered = rockets.filter((rocket) => {
+//     if (props.location && rocket.country !== props.location) {
+//       return false;
+//     }
 
-  const filteredRockets = rockets.filter((rocket) => {
-    if (props.location && rocket.country !== props.location) {
-      return false;
-    }
+//     const rocketYear = new Date(rocket.first_flight).getFullYear();
+//     if (props.year && rocketYear !== parseInt(props.year)) {
+//       return false;
+//     }
 
-    const rocketYear = new Date(rocket.first_flight).getFullYear();
-    if (props.year && rocketYear !== parseInt(props.year)) {
-      return false;
-    }
+//     if (props.engine && rocket.engines.type !== props.engine) {
+//       return false;
+//     }
 
-    if (props.engine && rocket.engines.type !== props.engine) {
-      return false;
-    }
+//     return true;
+//   });
 
-    return true;
-  });
+//   setFilteredRockets(filtered)
+//  }, [props.location, props.year, props.engine, rockets])
+
+  
 
   return (
     <div className="max-w-7xl mx-auto">
-      {filteredRockets.length === 0 ? (
+      {props.filteredrockets.length === 0 ? (
         <div className="flex flex-col gap-y-3 items-center">
           <p className="text-white font-bold text-3xl md:text-6xl text-center">
             No rockets match your search :(
@@ -51,7 +56,7 @@ const Rockets = (props) => {
         </div>
       ) : (
         <div className="grid md:grid-cols-2 gap-x-8 px-2 md:px-6 gap-y-8 w-full">
-          {filteredRockets.map((rocket) => (
+          {props.filteredrockets.map((rocket) => (
             <Link to={`/${rocket.rocket_id}`}>
               <Rocket
                 setOpen={props.setOpen}
