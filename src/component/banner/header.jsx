@@ -5,12 +5,45 @@ import { gsap } from "gsap";
 const Header = () => {
   const [time, setTime] = useState(new Date());
   const timeRef = useRef(null);
+  const timeDesktopRef = useRef(null)
   const logoRef = useRef(null);
+  const locationRef = useRef(null);
 
   useEffect(() => {
-    const time = timeRef.current;
+    const timemob = timeRef.current;
+    const desktime = timeDesktopRef.current
+    const location = locationRef.current
+    const logo = logoRef.current
+
     gsap.fromTo(
-      time,
+      logo,
+      {
+        opacity: 0,
+        y: -70,
+      },
+      { opacity: 1, y: 0, duration: 1, delay: 0.5 }
+    );
+
+    gsap.fromTo(
+      timemob,
+      {
+        opacity: 0,
+        x: -70,
+      },
+      { opacity: 1, x: 0, duration: 1, delay: 0.5 }
+    );
+
+    gsap.fromTo(
+      location,
+      {
+        opacity: 0,
+        x: 70,
+      },
+      { opacity: 1, x: 0, duration: 1, delay: 0.5 }
+    );
+
+    gsap.fromTo(
+      desktime,
       {
         opacity: 0,
         x: -70,
@@ -36,9 +69,9 @@ const Header = () => {
 
   return (
     <div className="justify-between w-full max-w-7xl mx-auto px-4 md:px-20 text-white flex items-center">
-      <p className="hidden md:block">Location: Pluto</p>
+      <p ref={locationRef} className="hidden md:block">Location: Pluto</p>
       <img ref={logoRef} className="w-[10em]" src={logo} alt="space-x logo" />
-      <p ref={timeRef} className="hidden md:block">
+      <p ref={timeDesktopRef} className="hidden md:block">
         {formattedTime}
       </p>
       <div ref={timeRef} className="flex md:hidden flex-col items-end">
