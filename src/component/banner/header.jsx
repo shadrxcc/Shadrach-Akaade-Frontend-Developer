@@ -31,15 +31,17 @@ const Header = () => {
     };
   }, []);
 
+  const formattedTime = time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
   return (
     <div className="justify-between w-full max-w-7xl mx-auto px-4 md:px-20 text-white flex items-center">
       <p className="hidden md:block">Location: Pluto</p>
       <img ref={logoRef} className="w-[10em]" src={logo} alt="" />
       <p ref={timeRef} className="hidden md:block">
-        {time.toLocaleTimeString()}
+        {formattedTime}
       </p>
       <div ref={timeRef} className="flex md:hidden flex-col items-end">
-        <p className="">{time.toLocaleTimeString()}</p>
+        <p className="">{formattedTime}</p>
         <p>Pluto</p>
       </div>
     </div>

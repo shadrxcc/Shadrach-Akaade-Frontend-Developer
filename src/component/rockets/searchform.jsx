@@ -19,7 +19,7 @@ const SearchForm = (props) => {
         <div className="flex flex-col items-center gap-y-2">
           <label htmlFor="location">Location</label>
           <select
-            className=" max-[280px]:w-[13rem]"
+            className="w-[13rem] md:w-full"
             onChange={(e) => props.onLocation(e.target.value)}
             value={props.country}
             name="Location"

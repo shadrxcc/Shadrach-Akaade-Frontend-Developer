@@ -50,7 +50,7 @@ const Rockets = (props) => {
           </button>
         </div>
       ) : (
-        <div className="grid md:grid-cols-2 gap-x-8 md:px-6 gap-y-8 w-full">
+        <div className="grid md:grid-cols-2 gap-x-8 px-2 md:px-6 gap-y-8 w-full">
           {filteredRockets.map((rocket) => (
             <Link to={`/${rocket.rocket_id}`}>
               <Rocket

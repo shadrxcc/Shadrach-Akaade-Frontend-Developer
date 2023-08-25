@@ -24,28 +24,26 @@ const RocketDetails = (props) => {
     };
     fetchData();
   }, [rocket_id]);
-  // console.log(rocketData.height.meters);
-  // console.log(rocketData.height.feet);
 
   return (
     <Wrapper>
       <Modal open={props.open}>
-        <div className="text-white bg-orange-400 overflow-hidden p-2 md:p-3">
-          <div className="flex justify-between">
-            <h2 className="text-4xl font-bold">{rocketData.rocket_name}</h2>
+        <div id="details" className="text-white overflow-hidden rounded-md p-2.5 md:p-3">
+          <div className="flex items-center py-4 justify-between">
+            <h2 className="text-2xl flex-1 text-center md:text-4xl font-bold">{rocketData.rocket_name}</h2>
             <button onClick={props.setOpen} className="f">
               <iconify-icon
-                width="50"
+                width="40"
                 icon="ep:close"
                 style={{ color: "white" }}
               />
             </button>
           </div>
 
-          <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col pb-4 gap-y-4">
             <div className="">
               <img
-                className="m-auto w-[20rem]"
+                className="m-auto rounded-md w-[20rem]"
                 src={rocketData.flickr_images}
                 alt=""
               />
@@ -84,7 +82,7 @@ const RocketDetails = (props) => {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3">
+              {/* <div className="grid grid-cols-2 md:grid-cols-3">
                 <span className="flex flex-col items-center">
                   <p>Height</p>
                   <span className="flex gap-x-4">
@@ -108,7 +106,7 @@ const RocketDetails = (props) => {
                     </p>
                   </span>
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
