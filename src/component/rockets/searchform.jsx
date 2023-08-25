@@ -20,6 +20,7 @@ const SearchForm = (props) => {
         <div className="flex flex-col items-center gap-y-2">
           <label htmlFor="location">Location</label>
           <select
+            required
             className="w-[13rem] md:w-full"
             onChange={(e) => props.onLocation(e.target.value)}
             value={props.country}
@@ -45,6 +46,7 @@ const SearchForm = (props) => {
               First Launch
             </label>
             <select
+              required
               value={props.year}
               onChange={(e) => props.onYear(e.target.value)}
               name="Launch"
@@ -69,6 +71,7 @@ const SearchForm = (props) => {
               Type
             </label>
             <select
+              required
               value={props.engine}
               onChange={(e) => props.onEngine(e.target.value)}
               name="Type"

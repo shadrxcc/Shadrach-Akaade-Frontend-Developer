@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import img from "../../assets/lambo-removebg-preview.png";
 import Modal from "./modal";
 import Wrapper from "../wrapper";
 import { useParams } from "react-router-dom";
@@ -28,9 +27,14 @@ const RocketDetails = (props) => {
   return (
     <Wrapper>
       <Modal open={props.open}>
-        <div id="details" className="text-white overflow-hidden rounded-md p-2.5 md:p-3">
+        <div
+          id="details"
+          className="text-white overflow-hidden rounded-md p-2.5 md:p-3"
+        >
           <div className="flex items-center py-4 justify-between">
-            <h2 className="text-2xl flex-1 text-center md:text-4xl font-bold">{rocketData.rocket_name}</h2>
+            <h2 className="text-2xl flex-1 text-center md:text-4xl font-bold">
+              {rocketData.rocket_name}
+            </h2>
             <button onClick={props.setOpen} className="f">
               <iconify-icon
                 width="40"
@@ -45,7 +49,7 @@ const RocketDetails = (props) => {
               <img
                 className="m-auto rounded-md w-[20rem]"
                 src={rocketData.flickr_images}
-                alt=""
+                alt={rocketData.rocket_name}
               />
             </div>
             <p className="text-center">{rocketData.description}</p>
@@ -81,32 +85,6 @@ const RocketDetails = (props) => {
                   <p>{rocketData.country}</p>
                 </span>
               </div>
-
-              {/* <div className="grid grid-cols-2 md:grid-cols-3">
-                <span className="flex flex-col items-center">
-                  <p>Height</p>
-                  <span className="flex gap-x-4">
-                    <p>
-                      {rocketData.height.meters} <span>m</span>
-                    </p>
-                    <p>
-                      {rocketData.height.feet} <span>ft</span>
-                    </p>
-                  </span>
-                </span>
-
-                <span className="flex flex-col items-center">
-                  <p>Diameter</p>
-                  <span className="flex gap-x-4">
-                    <p>
-                      {rocketData.diameter.meters} <span>m</span>
-                    </p>
-                    <p>
-                      {rocketData.diameter.feet} <span>ft</span>
-                    </p>
-                  </span>
-                </span>
-              </div> */}
             </div>
           </div>
         </div>

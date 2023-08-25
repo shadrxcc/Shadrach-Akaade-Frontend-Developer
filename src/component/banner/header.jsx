@@ -5,8 +5,7 @@ import { gsap } from "gsap";
 const Header = () => {
   const [time, setTime] = useState(new Date());
   const timeRef = useRef(null);
-  const logoRef = useRef(null)
-
+  const logoRef = useRef(null);
 
   useEffect(() => {
     const time = timeRef.current;
@@ -18,7 +17,6 @@ const Header = () => {
       },
       { opacity: 1, x: 0, duration: 1, delay: 0.5 }
     );
-    
   }, []);
 
   useEffect(() => {
@@ -31,12 +29,15 @@ const Header = () => {
     };
   }, []);
 
-  const formattedTime = time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const formattedTime = time.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <div className="justify-between w-full max-w-7xl mx-auto px-4 md:px-20 text-white flex items-center">
       <p className="hidden md:block">Location: Pluto</p>
-      <img ref={logoRef} className="w-[10em]" src={logo} alt="" />
+      <img ref={logoRef} className="w-[10em]" src={logo} alt="space-x logo" />
       <p ref={timeRef} className="hidden md:block">
         {formattedTime}
       </p>

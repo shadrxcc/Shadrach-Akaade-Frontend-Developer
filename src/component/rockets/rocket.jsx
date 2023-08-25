@@ -19,9 +19,9 @@ const Rocket = ({
     >
       <img
         src={img}
-        className="m max-[280px]:w-[14em] w-80 md:w-[30rem] h-60 m-auto object-cover"
+        className="m max-[280px]:w-[14em] w-80 md:w-[30rem] h-60 md:h-80 m-auto object-cover"
         loading="lazy"
-        alt=""
+        alt={rocketname}
       />
       <div className="flex justify-between">
         <p>{rocketname}</p>

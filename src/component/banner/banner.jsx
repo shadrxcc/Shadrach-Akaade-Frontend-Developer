@@ -5,10 +5,10 @@ import Arrowdown from "./arrowdown";
 
 const Banner = () => {
   return (
-    <div id="banner" className="">
+    <div id="banner">
       <Header />
       <Hero />
-      <Arrowdown/>
+      <Arrowdown />
     </div>
   );
 };

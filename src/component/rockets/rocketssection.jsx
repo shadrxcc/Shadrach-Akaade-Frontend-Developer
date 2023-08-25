@@ -1,4 +1,3 @@
-// RocketsSection.js
 import React, { useState, useEffect } from "react";
 import Wrapper from "../wrapper";
 import SearchForm from "./searchform";
@@ -18,13 +17,12 @@ const RocketsSection = () => {
       .then((response) => response.json())
       .then((data) => {
         setRockets(data);
-        setFilteredRockets(data)
+        setFilteredRockets(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, []);
-
 
   const handleSearch = () => {
     const filtered = rockets.filter((rocket) => {
