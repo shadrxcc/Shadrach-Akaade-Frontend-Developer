@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
-import { ScrollToTop } from "./component/ScrollToTop";
 
 const RouteSwitch = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/:rocket_id" element={<App />} />
