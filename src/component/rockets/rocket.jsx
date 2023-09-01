@@ -56,7 +56,7 @@ export default Rocket
 
 		
 Rocket.propTypes = {
-	img: PropTypes.node,
+	img: PropTypes.string,
 	id: PropTypes.number,
 	rocketname: PropTypes.string,
 	success_rate: PropTypes.number,

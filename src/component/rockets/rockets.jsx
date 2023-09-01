@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 
-import PropType from "prop-types" 
-import Rocket from "./Rocket"
+import PropTypes from "prop-types" 
+import Rocket from "./rocket"
 
 class Rockets extends Component {
 	render() {
@@ -47,6 +47,6 @@ class Rockets extends Component {
 export default Rockets
 
 Rockets.propTypes = {
-	filteredrockets: PropType.func,
-	setOpen: PropType.func,
+	filteredrockets: PropTypes.arrayOf(PropTypes.object),
+	setOpen: PropTypes.func,
 }
