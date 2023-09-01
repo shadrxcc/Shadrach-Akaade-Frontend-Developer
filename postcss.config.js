@@ -1,6 +1,10 @@
+/* eslint-disable linebreak-style */
 export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+	parserOptions: {
+		ecmaVersion: 2021,
+	},
+	plugins: {
+		tailwindcss: {},
+		autoprefixer: {},
+	},
 }
