@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import Rocket from "./Rocket"
+import { Rocket } from "./Rocket"
 import PropType from "prop-types" 
 
 class Rockets extends Component {

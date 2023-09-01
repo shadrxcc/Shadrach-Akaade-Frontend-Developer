@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Card from "../card"
 import PropTypes from "prop-types"
 
-class Rocket extends Component {
+export class Rocket extends Component {
 	render() {
 		const {
 			img,
@@ -57,10 +57,6 @@ class Rocket extends Component {
 		)
 	}
 }
-
-export default Rocket
-
-
 
 Rocket.propTypes = {
 	img: PropTypes.node,
